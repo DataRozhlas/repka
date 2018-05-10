@@ -1,0 +1,323 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script>
+Highcharts.setOptions({
+    lang: {
+        numericSymbols: [' tisíc']
+    }
+});
+
+Highcharts.chart('graf1', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Osevní plochy ozimých obilovin a řepky'
+    },
+    credits: {
+    		text: 'Zdroj: ČSÚ',
+        href: 'https://www.czso.cz/csu/czso/osevni-plochy-ozimych-plodin-pro-sklizen-v-roce-2018'
+    },
+    xAxis: {
+        categories: [
+            'pšenice ozimá',
+            'žito ozimé',
+            'ječmen ozimý',
+            'tritikále (kříženec žita a pšenice)',
+            'řepka ozimá'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'hektary'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} hektarů</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: '2017',
+        color: '#90EE90',
+        data: [785499, 22221,97178,36263,394262]
+
+    }, {
+        name: '2018',
+        color: '#228B22',
+        data: [744843,27074,109314,32471,394699]
+
+    }]
+});
+
+Highcharts.chart('graf2', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Osevní plochy plodin na obhospodařované zemědělské půdě'
+    },
+    credits: {
+    		text: 'Zdroj: ČSÚ',
+        href: 'https://www.czso.cz/csu/czso/soupis-ploch-osevu-k-31-5-2017'
+    },
+    xAxis: {
+        categories: [
+  "trvalé travní porosty",
+  "pšenice jarní i ozimá",
+  "řepka",
+  "ječmen jarní i ozimý",
+  "kukuřice",
+  "cukrovka technická",
+  "vojtěška",
+  "jetel červený",
+  "oves",
+  "tritikále (kžíženec žita a pšenice)",
+  "hrách setý na zrno",
+  "dočasné travní porosty a pastviny",
+  "ostatní víceleté plodiny na zeleno",
+  "mák",
+  "orná půda neosetá a úhor",
+  "brambory celkem",
+  "žito ozimé a jarní",
+  "slunečnice na semeno",
+  "jednoleté luskoviny na zeleno",
+  "obiloviny na zeleno (mimo kukuřici)",
+  "plochy na semeno celkem",
+  "vinice",
+  "ovocné sady",
+  "sója",
+  "ostatní jednoleté plodiny na zeleno",
+  "hořčice na semeno",
+  "zelenina konzumní celkem",
+  "ostatní obiloviny",
+  "chmel",
+  "ostatní trvalé kultury",
+  "lupina na zrno",
+  "kořeninové rostliny",
+  "ostatní luskoviny",
+  "léčivé rostliny",
+  "ostatní plochy vč. pokusných",
+  "ostatní olejniny",
+  "len setý olejný",
+  "školky ",
+  "jahody",
+  "zahrady",
+  "energetické plodiny jinde neuvedené",
+  "konopí",
+  "krmná řepa",
+  "ostatní technické plodiny",
+  "květiny a okrasné rostliny",
+  "ostatní okopaniny"],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'hektary'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} hektarů</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: '2017',
+        color: '#90EE90',
+        data: [978161,832062,{y:394262, color:'#228B22' },327707,309207,66101,62508,59778,44065,36263,34793,34261,32960,32586,26247,23418,22221,21601,19628,18446,17473,17210,17111,15344,12365,11825,10237,6369,5704,4685,4536,4405,3527,3052,2206,2185,1722,1509,687,666,609,569,382,352,205,118]
+    }]
+});
+
+Highcharts.chart('graf3', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Podíl polí osetých řepkou na veškeré orné půdě'
+    },
+    subtitle: {
+        text: 'Jen země, v nichž se řepka pěstuje. Data z roku 2017 nebo nejnovější dostupná'
+    },
+    legend: {
+    		enabled: false
+    },
+    credits: {
+    		text: 'Zdroj: Eurostat',
+        href: 'http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tag00100&plugin=1'
+    },
+    xAxis: {
+        categories: ["Česko", "Slovensko", "Německo", "Estonsko", "Británie", "Lotyšsko", "Litva", "Polsko", "Francie", "Dánsko", "Rumunsko", "EU 28", "Maďarsko", "Chorvatsko", "Lucembursko", "Švýcarsko", "Bulharsko", "Švédsko", "Rakousko", "Finsko", "Irsko", "Slovinsko", "Belgie", "Španělsko", "Řecko", "Itálie", "Nizozemsko"],
+        crosshair: true
+    },
+    tooltip: {
+    		valueDecimals: 2,
+        valueSuffix: ' procent orné půdy'
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'procenta orné půdy'
+        }
+    },
+    series: [{
+        name: 'poslední dostupná data',
+        color: '#6B8E23',
+        data: [{y:15.95193, color: '#F0E68C'}, 11.14147, 11.12726, 10.74779, 9.757366, 8.742236, 8.452461, 8.329015, 7.567228, 7.4883, 6.973874, 6.336007, 5.921226, 5.563898, 5.276747, 5.103517, 4.614404, 4.452794, 3.030326, 2.460003, 2.26559, 1.9794, 1.221636, 0.731158, 0.250546, 0.233249, 0.188685]
+
+    }]
+});
+
+Highcharts.chart('graf4', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Produkce, dovoz, vývoz a spotřeba metylesteru řepkového oleje'
+  },
+  xAxis: {
+    categories: [1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+    crosshair: true
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'tuny'
+    }
+  },
+  credits: {
+    text: 'Zdroj: Ministerstvo průmyslu a obchodu',
+    href: 'https://www.mpo.cz/assets/cz/energetika/statistika/kapalna-biopaliva/2018/4/Kapalna_biopaliva_2017CZ_12Cs.pdf'
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+      '<td style="padding:0"><b>{point.y} tun</b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  series: [{
+    name: 'domácí produkce',
+    data: [3400, 5600, 9200, 11800, 19300, 27600, 15700, 30630, 67200, 71100, 104400, 113500, 85144, 126894, 110152, 81806, 76672, 154923, 197988, 210092, 172729, 181694, 219316, 167646, 148832, 157429]
+
+  }, {
+    name: 'dovoz',
+    data: [null, null, 1600, 8400, 8700, 11400, 25800, 20200, 3200, 2900, 40, 60, 3120, 7811, 22973, 8339, 43657, 10866, 21707, 54294, 78314, 85551, 118278, 175839, 151338, 137315]
+
+  }, {
+    name: 'vývoz',
+    data: [null, null, null, 2400, 3200, 1500, 80, 30, 72, 22400, 31300, 43500, 52414, 131536, 110926, 53572, 34352, 29911, 35232, 16796, 6703, 43216, 35221, 67623, 40822, 18196]
+
+  }, {
+    name: 'hrubá spotřeba',
+    data: [3400, 5600, 10800, 17800, 24800, 37500, 41420, 50800, 70328, 51600, 73140, 70060, 35850, 3169, 20229, 36946, 88121, 135572, 184188, 245216, 242267, 228084, 300413, 277268, 258876, 276186]
+
+  }]
+});
+
+Highcharts.chart('graf5', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Podíl na dodávkách metylesteru řepkového oleje do státního podniku ČEPRO v roce 2017'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f} %</b>'
+    },
+    credits: {
+    	text: 'Zdroj: ČEPRO'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'            }
+        }
+    },
+    series: [{
+        name: 'podíl',
+        colorByPoint: true,
+        data: [{
+            name: 'Preol (Agrofert)',
+            y: 52.45,
+            color: 'red'
+        }, {
+            name: 'MOL',
+            y: 21.82,
+            color: 'grey'
+        }, {
+            name: 'P3CHEM',
+            y: 8.39,
+            color: 'grey'
+        }, {
+            name: 'Bamonaft',
+            y: 4.24,
+            color: 'grey'
+        }, {
+            name: 'Glencore',
+            y: 4.1,
+            color: 'grey'
+        }, {
+            name: 'Primagra (Agrofert)',
+            y: 3.88,
+            color: 'red'
+        }, {
+            name: 'MEROCO',
+            y: 2.83,
+            color: 'grey'
+        }, {
+            name: 'Mabanaft DE',
+            y: 1.15,
+            color: 'grey'
+        }, {
+            name: 'Lenz',
+            y: 0.69,
+            color: 'grey'
+        }, {
+            name: 'PETROLTRANS',
+            y: 0.45,
+            color: 'grey'
+        }]
+    }]
+});
+
+</script>
+
+<style>
+	.cislo {
+  background: #F0E68C;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em; 
+}
+</style>
